@@ -26,7 +26,7 @@ function App() {
           return moment
             .unix(now - stateTime)
             .utc()
-            .format('HH:mm:ss');
+            .format("HH:mm:ss");
         });
       }, 1000);
     }
@@ -49,7 +49,7 @@ function App() {
   };
 
   return (
-    <div className='container'>
+    <div className="container">
       <div className='time'>
         <div className='card'>
           <h1>Time in epoch:</h1>
