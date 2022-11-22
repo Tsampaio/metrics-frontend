@@ -14,14 +14,14 @@ describe('Frotend Metrics', () => {
     jest.useFakeTimers();
 
     const epochTime = Math.round(Date.now() / 1000);
-    const mockedMEtrics = 'http_requests_total{route="/time",method="GET",status="2XX"} 1';
+    const mockedMetricsFirst = 'http_requests_total{route="/time",method="GET",status="2XX"} 1';
 
-    mockedMetrics.mockResolvedValue([{ time: epochTime }, mockedMEtrics]);
+    mockedMetrics.mockResolvedValue([{ time: epochTime }, mockedMetricsFirst]);
 
     render(<App />);
 
     await waitFor(() => {
-      expect(screen.getByText(mockedMEtrics)).toBeInTheDocument();
+      expect(screen.getByText(mockedMetricsFirst)).toBeInTheDocument();
     });
 
     await waitFor(() => {
