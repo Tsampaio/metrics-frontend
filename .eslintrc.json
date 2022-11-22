@@ -1,10 +1,8 @@
 {
     "env": {
         "browser": true,
-        "node": true,
         "es2021": true,
-        "jest": true,
-        "amd": true
+        "jest": true
     },
     "extends": [
         "eslint:recommended",
@@ -19,8 +17,7 @@
         "sourceType": "module",
         "ecmaFeatures": {
             "jsx": true // Allows for the parsing of JSX
-        },
-        "project": "./tsconfig.json"
+        }
     },
     "plugins": [
         "react",
@@ -36,6 +33,37 @@
             "error",
             "single"
         ],
+        "jsx-quotes": [
+            2,
+            "prefer-single"
+        ],
         "no-duplicate-imports": "error"
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        },
+        "import/extensions": [
+            ".js",
+            ".jsx",
+            ".ts",
+            ".tsx"
+        ],
+        "import/parsers": {
+            "@typescript-eslint/parser": [
+                ".ts",
+                ".tsx"
+            ]
+        },
+        "import/resolver": {
+            "node": {
+                "extensions": [
+                    ".js",
+                    ".jsx",
+                    ".ts",
+                    ".tsx"
+                ]
+            }
+        }
     }
 }
